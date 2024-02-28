@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { BigSuccessButton, Button, DangerButton } from './components/Button.jsx'
+import { DangerButton2, BigSuccessButton2 } from './components/partiallyApplyButtons.jsx'
+
+
 
 function App() {
 
   return (
     <>
-      Hi
+      <Button text="Click me" />
+      <DangerButton text="Don't do it!" />
+		  <BigSuccessButton text="Yes!!!" />
+      <div>----------------</div>
+      <DangerButton2 text="Don't do it!" />
+		  <BigSuccessButton2 text="Yes!!!" />
     </>
   )
 }
