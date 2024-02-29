@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { CurrentUserLoader } from './CurrentUserLoader';
+import { UserLoader } from './UserLoader';
+import { ResourceLoader } from './ResourceLoader';
+import { ProductInfo } from './ProductInfo';
+import { UserInfo } from './UserInfo';
 
 function App() {
-
-  return (
-    <>
-      Hi
-    </>
-  )
+	return (
+		<>
+		<ResourceLoader resourceUrl="/users/123" resourceName="user">
+			<UserInfo />
+		</ResourceLoader>
+		<ResourceLoader resourceUrl="/products/1234" resourceName="product">
+			<ProductInfo />
+		</ResourceLoader>
+		</>
+	);
 }
 
-export default App
+export default App;
