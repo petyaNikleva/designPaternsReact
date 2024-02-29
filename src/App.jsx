@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import  ControlledForm  from './components/ControlledForm/ControlledForm.jsx';
+import Modal from './components/Modal/Modal.jsx';
+
 import './App.css'
+import { useState } from 'react';
 
 function App() {
-
+	const [shouldShowModal, setShouldShowModal] = useState(false);
   return (
     <>
-      Hi
+      <ControlledForm />
+	  <button onClick={() => setShouldShowModal(true)}>Show Modal</button>
+	  <Modal shouldShowModal={shouldShowModal} onRequestClose={() => setShouldShowModal(false)}>
+	  	<ControlledForm />
+      </Modal>
     </>
   )
 }
 
-export default App
+export default App;
